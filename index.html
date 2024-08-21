@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="style.css">
+  <title>Product list with cart</title>
+</head>
+<body>
+
+  <main class="wrapper">
+
+  <h1>Desserts</h1>
+  <div class="cart">
+    <p class="itemsCount">Your Cart (<span>0</span>)</p>
+    <div class="cartPlaceHolder">
+      <img src="./assets/images/illustration-empty-cart.svg" alt="cart icon">
+      <p>Your added items will appear here</p>
+    </div>
+    <div class="cartItems">
+      
+    </div>
+    <div class="confirmOrder">
+      <p class="orderTotal">Order Total <span>$0</span></p>
+      <div class="carbon">
+        <img src="./assets/images/icon-carbon-neutral.svg" alt="carbon neutral icon">
+        <p>This is a <span>carbon-neutral</span> delivery</p>
+      </div>
+      <button>Confirm Order</button>
+    </div>
+  </div>
+  <div class="products">
+
+  </div>
+  </main>
+
+    <dialog class="popup">
+      <img src="./assets/images/icon-order-confirmed.svg" alt="">
+      <h2>Order Confirmed</h2>
+      <p>We hope you enjoy your food!</p>
+
+      <div class="orderItems">
+        <div class="items-container">
+        </div>
+        <div class="order-total">
+          <p>Order Total</p>
+          <p class="total">$46.50</p>
+        </div>
+      </div>
+      <button>Start New Order</button>
+    </dialog>
+  <script src="main.js"></script>
+</body>
+</html>

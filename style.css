@@ -230,6 +230,7 @@ body{
     background-color: var(--Red);
     padding: 0 11px;
     box-sizing: border-box;
+    user-select: none;
   }
   &.added .addBtn button .icon{
     display: flex;

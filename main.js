@@ -175,7 +175,6 @@ const addToCartBtns = document.querySelectorAll('.wrapper .products .product .ad
 addToCartBtns.forEach(btn =>{
   btn.addEventListener('click', (e)=>{
     const target = e.target;
-    console.log(target);
     const product = getParentOf(btn, 'product');
     const {id, name, price, thumbnail} = product.dataset;
     if (!btn.classList.contains('setCount') && !(id in cart.items)) {
@@ -250,8 +249,9 @@ function addItem(id, name, count, price, total){
 
 function removeItem(id){
   document.querySelector(`.wrapper .cart.hasItems .cartItems .cartItem-${id}`).remove()
+  const product = document.querySelector(`.wrapper .products .product[data-id="${id}"]`)
   const btn = document.querySelector(`.wrapper .products .product[data-id="${id}"] .addBtn`)
-  btn.classList.remove('setCount')
+  product.classList.remove('added')
   btn.innerHTML = addBtn;
   delete cart.items[id]
   const cartItemsCount = cart.itemsCount()
@@ -289,22 +289,7 @@ confirmBtn.addEventListener('click', ()=>{
 })
 
 startNewOrderBtn.addEventListener('click', ()=> {
-  orderPopup.close()
-  location.reload()
+  orderPopup.close();
+  window.scrollTo(0,0);
+  location.reload();
 })
-
-
-// fetch('https://test-api.free.beeceptor.com/all-products')
-    //   .then(response => {
-    //     return response.json()
-    //   })
-    //   .then(data => {
-    //     console.log('data:');
-    //     data['all'].forEach(product => {
-    //       console.log(product);
-    //     });
-    //     console.log(JSON.stringify(data));
-    //   })
-    //   .catch(error => {
-    //     console.log('there was a problem while fetching data: ', error);
-    //   })
